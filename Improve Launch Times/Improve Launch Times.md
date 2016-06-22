@@ -20,7 +20,7 @@ Warm launch 是指 App 和数据已经在内存中时启动，而 cold launch �
 
 我们可以使用 `DYLD_PRINT_STATISTICS` 来测量启动时间。值得一提的是，这一环境变量在新的 OSes 中有了极大的改进，提供了更多有价值的信息。
 
- ![Alt text](./屏幕快照 2016-06-22 上午2.53.27.png)
+ ![Alt text](https://github.com/luiyezheng/iOS-Tips/blob/master/Improve%20Launch%20Times/1.png)
 
 设置完成之后，我们就可以在 console 中看到如下的输出了：
 
@@ -38,13 +38,13 @@ Total pre-main time: 10.6 seconds (100.0%)
 ###Dylib Loading
 嵌入动态库的代价是很昂贵的。尝试限制动态库（dylib）的数量，如果你必须要使用动态库的话，尽可能得将它们合并。
 
-![Alt text](./屏幕快照 2016-06-22 上午10.58.36.png)
+![Alt text](https://github.com/luiyezheng/iOS-Tips/blob/master/Improve%20Launch%20Times/2.png)
 
 
 ###Rebase/Binging
 另一个策略是减少 _DATA pinters，在实际应用中，这意味不要过度使用 class，selectors（而是多使用 Swift 中的 structs）
 
-![Alt text](./屏幕快照 2016-06-22 上午10.58.22.png)
+![Alt text](https://github.com/luiyezheng/iOS-Tips/blob/master/Improve%20Launch%20Times/3.png)
 
 
 ###使用 Swift
